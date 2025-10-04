@@ -10,22 +10,24 @@ body {
 
 .scene {
     position: relative;
-    width: 800px;
-    height: 500px;
+    width: 90vw; /* responsive width */
+    max-width: 800px; /* limit to prevent being too large */
+    height: 60vh; /* responsive height */
+    max-height: 500px;
 }
 
 .dove {
     position: absolute;
-    width: 200px;
-    top: 100px;
-    left: -200px;
+    width: 20%; /* dove size relative to scene */
+    top: 10%;
+    left: -25%;
     animation: flyWithLetter 4s forwards ease-in-out;
 }
 
 .letter {
     position: absolute;
-    width: 80px;
-    top: 150px;
+    width: 10%;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -34,14 +36,15 @@ body {
 }
 
 @keyframes flyWithLetter {
-    0% { left: -200px; opacity: 1; }
-    50% { left: 300px; opacity: 1; }
-    51% { opacity: 0; } /* Dove disappears */
-    100% { left: 300px; opacity: 0; }
+    0% { left: -25%; opacity: 1; }
+    50% { left: 35%; opacity: 1; }
+    51% { opacity: 0; }
+    100% { left: 100%; opacity: 0; }
 }
 
 @keyframes dropLetter {
-    0%, 50% { opacity: 0; top: 150px; }
+    0%, 50% { opacity: 0; top: 30%; }
     51% { opacity: 1; }
-    100% { opacity: 250px; opacity: 1; }
+    100% { top: 50%; opacity: 1; }
 }
+
